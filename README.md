@@ -1,24 +1,46 @@
-# CSE 570 Project 4: 3D Mesh Classification
+# Geometric Deep Learning for 3D Mesh Classification
 
-This repository contains Project 4 coursework for CSE 570, focused on deep learning for 3D mesh understanding and classification.
+This repository contains experiments for classifying 3D meshes with deep learning, including training diagnostics and iterative architecture/training refinements.
 
-## Contents
+## What this project demonstrates
 
-- `CSE570_Project4_Question1.ipynb`
-- `CSE570_Project4_Question2.ipynb`
-- `CSE570_Project4_Question3.ipynb`
-- `CSE570_Project4_Question4.ipynb`
-- `test_modified.py.txt`
-- `train_modified.py.txt`
-- `writer_modified.py.txt`
+- 3D geometric data preprocessing and representation
+- Mesh classification model training
+- Experiment tracking via notebook-based runs and logs
+- Performance progression across training epochs
 
-## Project Context
+## Tech stack
 
-- Experiments are organized by question notebooks.
-- Training logs in notebooks show epoch-wise progress and evaluation on SHREC16-style mesh classification tasks.
-- The `.txt` files capture code-level modifications used in experimentation.
+- Python
+- PyTorch
+- Jupyter
+
+## How to run
+
+1. Prepare a Python environment with deep learning dependencies.
+2. Download/prepare the mesh dataset used by the notebooks.
+3. Open and run notebooks in order for each experiment track.
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install torch torchvision numpy matplotlib jupyter
+jupyter lab
+```
+
+## Results snapshot
+
+Notebook training logs show strong convergence in key runs:
+
+- Test accuracy improves from early low-baseline values (for example `50.0%`) to high-performing checkpoints.
+- One tracked run reaches and sustains `100.0%` test accuracy after sufficient epochs in the logged experiment sequence.
+
+## Repository contents
+
+- Multiple experiment notebooks (`Question1` to `Question4`)
+- Model/training modification notes in `*_modified.py.txt`
+- Supporting report artifact
 
 ## Notes
 
-- This repo is published as an academic portfolio artifact.
-- Large datasets/checkpoints are not included.
+- Large datasets/checkpoints are not included in this repository.
