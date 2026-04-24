@@ -37,9 +37,13 @@ Notebook training logs show strong convergence in key runs:
 
 ## Repository contents
 
-- Multiple experiment notebooks (`Question1` to `Question4`)
+- Experiment notebooks:
+  - `mesh-classification-experiment-1.ipynb`
+  - `mesh-classification-experiment-2.ipynb`
+  - `mesh-classification-experiment-3.ipynb`
+  - `mesh-classification-experiment-4.ipynb`
 - Model/training modification notes in `*_modified.py.txt`
-- Supporting report artifact
+- `mesh-classification-report.pdf`
 
 ## Notes
 
