@@ -1,25 +1,39 @@
 # Geometric Deep Learning for 3D Mesh Classification
 
-This repository contains experiments for classifying 3D meshes with deep learning, including training diagnostics and iterative architecture/training refinements.
+This repository contains a multi-experiment workflow for **3D mesh classification** using deep learning.  
+It focuses on practical model training behavior, optimization dynamics, and iterative architecture-level refinement.
+
+## Problem Statement
+
+Unlike 2D images, 3D meshes encode non-Euclidean geometric structure.  
+The goal is to classify mesh objects by learning shape-aware features that remain robust under variation in geometry and representation.
 
 ## What this project demonstrates
 
-- 3D geometric data preprocessing and representation
-- Mesh classification model training
-- Experiment tracking via notebook-based runs and logs
-- Performance progression across training epochs
+- mesh-oriented preprocessing and data handling,
+- supervised training loops for geometric models,
+- epoch-by-epoch evaluation tracking,
+- convergence diagnostics and iterative refinement.
 
-## Tech stack
+## Experiment Design
+
+The work is organized as four experiment notebooks, each extending or validating a different part of the modeling pipeline:
+
+- `mesh-classification-experiment-1.ipynb`
+- `mesh-classification-experiment-2.ipynb`
+- `mesh-classification-experiment-3.ipynb`
+- `mesh-classification-experiment-4.ipynb`
+
+Supporting implementation notes are captured in `*_modified.py.txt` files.
+
+## Tech Stack
 
 - Python
 - PyTorch
 - Jupyter
+- NumPy / Matplotlib for analysis and visualization
 
-## How to run
-
-1. Prepare a Python environment with deep learning dependencies.
-2. Download/prepare the mesh dataset used by the notebooks.
-3. Open and run notebooks in order for each experiment track.
+## Environment Setup
 
 ```bash
 python -m venv venv
@@ -28,23 +42,32 @@ pip install torch torchvision numpy matplotlib jupyter
 jupyter lab
 ```
 
-## Results snapshot
+## How to Run
 
-Notebook training logs show strong convergence in key runs:
+1. Prepare the mesh dataset expected by the notebooks.
+2. Launch Jupyter.
+3. Run notebooks in sequence to follow experiment progression.
+4. Inspect training logs, checkpoint behavior, and accuracy trends.
 
-- Test accuracy improves from early low-baseline values (for example `50.0%`) to high-performing checkpoints.
-- One tracked run reaches and sustains `100.0%` test accuracy after sufficient epochs in the logged experiment sequence.
+## Results and Observations
 
-## Repository contents
+Logged runs show clear convergence patterns:
 
-- Experiment notebooks:
-  - `mesh-classification-experiment-1.ipynb`
-  - `mesh-classification-experiment-2.ipynb`
-  - `mesh-classification-experiment-3.ipynb`
-  - `mesh-classification-experiment-4.ipynb`
-- Model/training modification notes in `*_modified.py.txt`
-- `mesh-classification-report.pdf`
+- Early epochs begin with low-to-mid performance (for example near `50%` test accuracy).
+- Performance rises significantly through training progression.
+- One tracked sequence reaches and sustains `100%` test accuracy in later epochs.
 
-## Notes
+This indicates strong learnability for the evaluated setup, while also highlighting the importance of training duration and configuration.
 
-- Large datasets/checkpoints are not included in this repository.
+## Repository Contents
+
+- experiment notebooks (`mesh-classification-experiment-*.ipynb`)
+- architecture/training change notes (`*_modified.py.txt`)
+- summary artifact: `mesh-classification-report.pdf`
+
+## Practical Next Steps
+
+- validate on larger and more diverse mesh benchmarks,
+- add cross-validation and robustness checks,
+- test augmentation strategies and regularization,
+- package final inference path as reproducible script/API.
